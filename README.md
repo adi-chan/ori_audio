@@ -4,6 +4,9 @@ A simple Chrome extension that automatically switches YouTube videos to English 
 
 https://github.com/user-attachments/assets/a4898c40-faba-492f-9372-00e917eb5cea
 
+
+There may be bugs and other issues with this tool, this is just a rough tool I made within an hour to test if it's possible to switch language automatically. Might polish it up later on or if other contribute.
+
 ## How to use
 1. Download or clone this repository, using git clone or click green button "CODE" and download ZIP
 2. Open Chrome and go to `chrome://extensions`
