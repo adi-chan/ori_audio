@@ -1,0 +1,15 @@
+# YouTube Force English Audio
+
+A simple Chrome extension that automatically switches YouTube videos to English audio if available.
+
+## How to use
+1. Download or clone this repository
+2. Open Chrome and go to `chrome://extensions`
+3. Enable **Developer mode**
+4. Click **Load unpacked**
+5. Select this folder
+
+## Notes
+- Works only on videos with multiple audio tracks
+- No data collection
+- No ads
