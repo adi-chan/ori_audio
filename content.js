@@ -1,33 +1,33 @@
 (async () => {
-  // 1. Open settings
+
   document.querySelector('.ytp-settings-button')?.click();
   await new Promise(r => setTimeout(r, 300));
 
-  // 2. Click "Audio track"
+  
   const menuItems = [...document.querySelectorAll('.ytp-menuitem')];
   const audioMenu = menuItems.find(i =>
     i.innerText.toLowerCase().includes('audio')
   );
 
   if (!audioMenu) {
-    console.log('❌ Audio track menu not found');
+    console.log('Audio track menu not found');
     return;
   }
 
   audioMenu.click();
   await new Promise(r => setTimeout(r, 300));
 
-  // 3. Select English
+  
   const audioItems = [...document.querySelectorAll('.ytp-menuitem')];
   const english = audioItems.find(i =>
     i.innerText.toLowerCase().includes('english')
   );
 
   if (!english) {
-    console.log('❌ English audio not found');
+    console.log('English audio not found');
     return;
   }
 
   english.click();
-  console.log('✅ Switched audio to English');
+  console.log('Switched audio to English');
 })();
