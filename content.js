@@ -10,7 +10,11 @@ async function forceEnglishAudio() {
   const audioMenu = menuItems.find(i =>
     i.innerText.toLowerCase().includes('audio')
   );
-  if (!audioMenu) return; 
+  
+  if (!audioMenu) {
+    document.querySelector('.ytp-settings-button')?.click();
+    return; 
+  }
 
   audioMenu.click();
   await new Promise(r => setTimeout(r, 300));
