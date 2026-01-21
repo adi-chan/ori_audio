@@ -2,8 +2,6 @@
 
 A simple Chrome extension that automatically switches YouTube videos to English audio if available.
 
-https://github.com/adi-chan/ori_audio/raw/main/demo.mp4
-
 ## How to use
 1. Download or clone this repository, using git clone or click green button "CODE" and download ZIP
 2. Open Chrome and go to `chrome://extensions`
