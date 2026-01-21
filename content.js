@@ -1,33 +1,37 @@
-(async () => {
+async function forceEnglishAudio() {
+  const settingsBtn = document.querySelector('.ytp-settings-button');
+  if (!settingsBtn) return;
 
-  document.querySelector('.ytp-settings-button')?.click();
+  settingsBtn.click();
   await new Promise(r => setTimeout(r, 300));
 
-  
   const menuItems = [...document.querySelectorAll('.ytp-menuitem')];
   const audioMenu = menuItems.find(i =>
     i.innerText.toLowerCase().includes('audio')
   );
-
-  if (!audioMenu) {
-    console.log('Audio track menu not found');
-    return;
-  }
+  if (!audioMenu) return;
 
   audioMenu.click();
   await new Promise(r => setTimeout(r, 300));
 
-  
   const audioItems = [...document.querySelectorAll('.ytp-menuitem')];
   const english = audioItems.find(i =>
     i.innerText.toLowerCase().includes('english')
   );
-
-  if (!english) {
-    console.log('English audio not found');
-    return;
-  }
+  if (!english) return;
 
   english.click();
   console.log('Switched audio to English');
-})();
+}
+
+
+setTimeout(forceEnglishAudio, 2000);
+
+
+let lastUrl = location.href;
+setInterval(() => {
+  if (location.href !== lastUrl) {
+    lastUrl = location.href;
+    setTimeout(forceEnglishAudio, 1500);
+  }
+}, 1000);
