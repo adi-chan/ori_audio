@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Force English Audio",
+  "version": "1.0",
+  "description": "Automatically switches YouTube audio to English",
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
