@@ -19,14 +19,14 @@ async function forceEnglishAudio() {
   audioMenu.click();
   await new Promise(r => setTimeout(r, 300));
 
-  const audioItems = [...document.querySelectorAll('.ytp-menuitem')]; // Set audio to english
+  const audioItems = [...document.querySelectorAll('.ytp-menuitem')]; // Set audio to original
   const english = audioItems.find(i =>
-    i.innerText.toLowerCase().includes('english')
+    i.innerText.toLowerCase().includes('original')
   );
   if (!english) return;
 
   english.click();
-  console.log('Switched audio to English');
+  console.log('Switched audio to Original');
 
   setTimeout(() => {                                                  // Close settings menu 
     document.querySelector('.ytp-settings-button')?.click();
