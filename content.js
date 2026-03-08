@@ -37,10 +37,49 @@ async function forceEnglishAudio() {
   }, 200);
 }
 
+async function forceShortsAudio() {
+  const menuBtn = document.querySelector('button[aria-label="More actions"]');
+  if (!menuBtn) return;
+
+  menuBtn.click();
+
+  await new Promise(r => setTimeout(r, 500));
+
+  const buttons = [...document.querySelectorAll('yt-list-item-view-model button')];
+
+  const audioBtn = buttons.find(b =>
+    b.innerText.toLowerCase().includes("audio")
+  );
+
+  if (!audioBtn) {
+    console.log("Audio track option not found");
+    return;
+  }
+
+  audioBtn.click();
+
+  await new Promise(r => setTimeout(r, 500));
+
+  const options = [...document.querySelectorAll('[role="menuitem"]')];
+
+  const original = options.find(o =>
+    o.innerText.toLowerCase().includes("original")
+  );
+
+  if (!original) {
+    console.log("Original audio not found");
+    return;
+  }
+
+  original.click();
+
+  console.log("Shorts audio switched to Original");
+}
+
 function runExtension() {
   if (isShorts()) {
     console.log("Shorts detected");
-    setTimeout(forceEnglishAudio, 2000);
+    setTimeout(forceShortsAudio, 2000);
   } else {
     console.log("Normal video detected");
     setTimeout(forceEnglishAudio, 2000);
