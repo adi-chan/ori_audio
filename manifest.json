@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Force English Audio",
+  "name": "YouTube Force Original Audio",
   "version": "1.0",
-  "description": "Automatically switches YouTube audio to English",
+  "description": "Automatically switches YouTube audio to Original Audio when available.",
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],

@@ -1,3 +1,7 @@
+function isShorts() {
+  return location.pathname.startsWith('/shorts/');
+}
+
 async function forceEnglishAudio() {
   const settingsBtn = document.querySelector('.ytp-settings-button'); // This opens the setting menu
   if (!settingsBtn) return;
@@ -33,14 +37,23 @@ async function forceEnglishAudio() {
   }, 200);
 }
 
+function runExtension() {
+  if (isShorts()) {
+    console.log("Shorts detected");
+    setTimeout(forceEnglishAudio, 2000);
+  } else {
+    console.log("Normal video detected");
+    setTimeout(forceEnglishAudio, 2000);
+  }
+}
 
-setTimeout(forceEnglishAudio, 2000); // This is for reload
 
+runExtension();
 
 let lastUrl = location.href; // Added this for new videos, this function will track the link so when link changes it recalls the function
 setInterval(() => {
   if (location.href !== lastUrl) {
     lastUrl = location.href;
-    setTimeout(forceEnglishAudio, 1500);
+    runExtension();
   }
 }, 1000);
